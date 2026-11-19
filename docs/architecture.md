@@ -45,13 +45,13 @@ flowchart LR
 
 Registre seu plano aqui antes de editar o código.
 
-- Decisão da camada de apresentação:
-- Decisão da camada de lógica:
-- Decisão da camada de dados:
-- Abordagem para registro de atividades:
-- Abordagem para gerenciamento de equipes:
-- Abordagem para o placar:
-- Abordagem para sugestões de treino:
+- Decisão da camada de apresentação: manter componentes de tela em `components/`, consumindo apenas o cliente `api/client.ts`, com estados de carregamento, vazio e erro em cada tela.
+- Decisão da camada de lógica: rotas finas em `routes/api.ts` delegando regras a `services/octofitService.ts`; erros de validação retornam 4xx.
+- Decisão da camada de dados: validações obrigatórias nos modelos Mongoose (`User`, `Team`, `Activity`, `Workout`); seed permanece idempotente via modelos.
+- Abordagem para registro de atividades: validar `userId` e `teamId` como ObjectIds e confirmar existência antes de criar; calcular `points` e `occurredAt` no serviço.
+- Abordagem para gerenciamento de equipes: `POST /api/teams` valida `name` (400 se ausente) e persiste `name`, `mascot` e integrantes.
+- Abordagem para o placar: agregar pontos das atividades por equipe, ordenar de forma decrescente e atribuir `rank` iniciando em 1.
+- Abordagem para sugestões de treino: buscar a pessoa pelo e-mail (404 se ausente) e derivar `focus` e `reason` do padrão de atividades recentes.
 
 ## Plano de testes
 
@@ -62,3 +62,9 @@ Registre os comandos executados e o significado de cada falha.
 - Testes do frontend: `npm test --prefix octofit-tracker/frontend`
 - Compilação do backend: `npm run build --prefix octofit-tracker/backend`
 - Compilação do frontend: `npm run build --prefix octofit-tracker/frontend`
+
+Execução inicial (antes da implementação) e significado das falhas:
+
+- Dados: 4 falhas por validação ausente nos modelos `User`, `Team`, `Activity` e `Workout`; o teste de seed passa.
+- API: 4 falhas — POST inválido retorna `501` (rota não implementada) em atividades e equipes; placar vazio; foco de sugestão divergente do padrão de atividade.
+- Frontend: 15 falhas — dados reais ausentes nas telas e falta de estados de carregamento, vazio e alerta `role="alert"`.
