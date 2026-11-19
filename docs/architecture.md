@@ -68,3 +68,5 @@ Execução inicial (antes da implementação) e significado das falhas:
 - Dados: 4 falhas por validação ausente nos modelos `User`, `Team`, `Activity` e `Workout`; o teste de seed passa.
 - API: 4 falhas — POST inválido retorna `501` (rota não implementada) em atividades e equipes; placar vazio; foco de sugestão divergente do padrão de atividade.
 - Frontend: 15 falhas — dados reais ausentes nas telas e falta de estados de carregamento, vazio e alerta `role="alert"`.
+
+Após a implementação: `test:data` (5/5), `test:api` (4/4), `npm test` do frontend (15/15) e os builds de backend e frontend passam.
