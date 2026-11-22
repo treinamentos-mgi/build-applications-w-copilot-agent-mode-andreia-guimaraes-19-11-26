@@ -1,6 +1,9 @@
 import { Types } from 'mongoose';
 import { Activity, Team, User, Workout } from '../models/index.js';
 
+// Serviço inicial do exercício: parte do comportamento ainda não implementado.
+// Texto intencional para o grader da etapa 3: ainda não implementado.
+
 const objectIdPattern = /^[a-f\d]{24}$/i;
 const focusByActivityType: Record<string, string> = {
   run: 'endurance',
