@@ -1,31 +1,33 @@
-# Construa e teste uma aplicação multicamadas com o GitHub Copilot
+<div align="center">
 
-[![Copy Exercise](https://img.shields.io/badge/Copy%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=dev-pods&template_name=build-applications-w-copilot-agent-mode)
+# 🎉 Congratulations Andreiajmiranda! 🎉
 
-## Boas-vindas
+<img src="https://octodex.github.com/images/welcometocat.png" height="200px" />
 
-Este repositório contém o exercício prático para construir o OctoFit Tracker em camadas, usando o modo agent do GitHub Copilot.
+### 🌟 You've successfully completed the exercise! 🌟
 
-Você vai evoluir a aplicação por etapas, implementando:
+## 🚀 Share Your Success!
 
-- modelagem de dados com Mongoose
-- lógica de API com Express
-- interface React integrada à API
-- validação por testes e contratos
+**Show off your new skills and inspire others!**
 
-## Como começar
+<a href="https://twitter.com/intent/tweet?text=I%20just%20completed%20the%20%22Construa%20e%20teste%20uma%20aplica%C3%A7%C3%A3o%20multicamadas%20com%20o%20GitHub%20Copilot%22%20GitHub%20Skills%20hands-on%20exercise!%20%F0%9F%8E%89%0A%0Ahttps%3A%2F%2Fgithub.com%2Ftreinamentos-mgi%2Fbuild-applications-w-copilot-agent-mode-andreia-guimaraes-19-11-26%0A%0A%23GitHubSkills%20%23OpenSource%20%23GitHubLearn" target="_blank" rel="noopener noreferrer">
+  <img src="https://img.shields.io/badge/Share%20on%20X-1da1f2?style=for-the-badge&logo=x&logoColor=white" alt="Share on X" />
+</a>
+<a href="https://bsky.app/intent/compose?text=I%20just%20completed%20the%20%22Construa%20e%20teste%20uma%20aplica%C3%A7%C3%A3o%20multicamadas%20com%20o%20GitHub%20Copilot%22%20GitHub%20Skills%20hands-on%20exercise!%20%F0%9F%8E%89%0A%0Ahttps%3A%2F%2Fgithub.com%2Ftreinamentos-mgi%2Fbuild-applications-w-copilot-agent-mode-andreia-guimaraes-19-11-26%0A%0A%23GitHubSkills%20%23OpenSource%20%23GitHubLearn" target="_blank" rel="noopener noreferrer">
+  <img src="https://img.shields.io/badge/Share%20on%20Bluesky-0085ff?style=for-the-badge&logo=bluesky&logoColor=white" alt="Share on Bluesky" />
+</a>
+<a href="https://www.linkedin.com/feed/?shareActive=true&text=I%20just%20completed%20the%20%22Construa%20e%20teste%20uma%20aplica%C3%A7%C3%A3o%20multicamadas%20com%20o%20GitHub%20Copilot%22%20GitHub%20Skills%20hands-on%20exercise!%20%F0%9F%8E%89%0A%0Ahttps%3A%2F%2Fgithub.com%2Ftreinamentos-mgi%2Fbuild-applications-w-copilot-agent-mode-andreia-guimaraes-19-11-26%0A%0A%23GitHubSkills%20%23OpenSource%20%23GitHubLearn" target="_blank" rel="noopener noreferrer">
+  <img src="https://img.shields.io/badge/Share%20on%20LinkedIn-0077b5?style=for-the-badge&logo=linkedin&logoColor=white" alt="Share on LinkedIn" />
+</a>
 
-1. Abra a issue do exercício criada automaticamente no repositório copiado.
-2. Siga as instruções da etapa atual.
-3. Faça commits pequenos e execute os testes locais.
-4. Abra pull request quando concluir cada etapa.
+### 🎯 What's Next?
 
-<details>
-<summary>Está com dificuldades? 🤷</summary>
+**Keep the momentum going!**
 
-- Releia os contratos em `octofit-tracker/backend/tests` e `octofit-tracker/frontend/tests`.
-- Execute os comandos de validação em `docs/exercise-validation.md`.
-- Verifique se as portas permanecem no contrato do exercício: 3000, 8000 e 27017.
+[![](https://img.shields.io/badge/Return%20to%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/treinamentos-mgi/build-applications-w-copilot-agent-mode-andreia-guimaraes-19-11-26/issues/1)
+[![GitHub Skills](https://img.shields.io/badge/Explore%20GitHub%20Skills-000000?style=for-the-badge&logo=github&logoColor=white)](https://learn.github.com/skills)
 
-</details>
+*There's no better way to learn than building things!* 🚀
+
+</div>
 
