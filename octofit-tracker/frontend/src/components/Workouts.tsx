@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { getJson } from '../api/client.js';
 import { useJsonResource } from '../hooks/useJsonResource.js';
 import { CapabilityCard, ResourceContent } from './CapabilityCard.js';
 
@@ -12,7 +13,7 @@ const people = [
 
 export default function Workouts() {
   const [email, setEmail] = useState(people[0].email);
-  const state = useJsonResource<SuggestionsResponse>(`/api/workouts/suggestions/${encodeURIComponent(email)}`);
+  const state = useJsonResource<SuggestionsResponse>(`/api/workouts/suggestions/${encodeURIComponent(email)}`, getJson<SuggestionsResponse>);
   return (
     <CapabilityCard title="Sugestões de treino" description="Receba recomendações de treino com base nos seus padrões de atividade.">
       <div className="mb-3">

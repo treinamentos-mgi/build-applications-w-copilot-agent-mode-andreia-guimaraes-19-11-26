@@ -1,3 +1,4 @@
+import { getJson } from '../api/client.js';
 import { useJsonResource } from '../hooks/useJsonResource.js';
 import { CapabilityCard, ResourceContent } from './CapabilityCard.js';
 
@@ -13,7 +14,7 @@ const activityLabels: Record<string, string> = {
 };
 
 export default function Activities() {
-  const state = useJsonResource<ActivitiesResponse>('/api/activities');
+  const state = useJsonResource<ActivitiesResponse>('/api/activities', getJson<ActivitiesResponse>);
   return (
     <CapabilityCard title="Atividades" description="Acompanhe os minutos de atividade e os pontos das pessoas participantes.">
       <ResourceContent state={state} isEmpty={(data) => data.activities.length === 0} emptyMessage="Nenhuma atividade registrada ainda.">

@@ -1,3 +1,4 @@
+import { getJson } from '../api/client.js';
 import { useJsonResource } from '../hooks/useJsonResource.js';
 import { CapabilityCard, ResourceContent } from './CapabilityCard.js';
 
@@ -5,7 +6,7 @@ type Team = { _id?: string; name: string; mascot?: string; members: unknown[] };
 type TeamsResponse = { teams: Team[] };
 
 export default function Teams() {
-  const state = useJsonResource<TeamsResponse>('/api/teams');
+  const state = useJsonResource<TeamsResponse>('/api/teams', getJson<TeamsResponse>);
   return (
     <CapabilityCard title="Equipes" description="Gerencie equipes e integrantes.">
       <ResourceContent state={state} isEmpty={(data) => data.teams.length === 0} emptyMessage="Nenhuma equipe cadastrada ainda.">

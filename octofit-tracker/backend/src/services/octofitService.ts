@@ -1,6 +1,9 @@
 import { Types } from 'mongoose';
 import { Activity, Team, User, Workout } from '../models/index.js';
 
+// Operações de atividades, equipes, placar e sugestões usando os modelos do OctoFit.
+// Valida entradas e referências antes de persistir dados ou calcular recomendações.
+
 const objectIdPattern = /^[a-f\d]{24}$/i;
 const focusByActivityType: Record<string, string> = {
   run: 'endurance',

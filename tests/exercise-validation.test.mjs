@@ -260,6 +260,20 @@ test('data grader rejects placeholder seed script', () => {
   assert.throws(() => checks['step2-data'](root), /required validation|placeholder/);
 });
 
+test('data grader accepts the protected Portuguese seed contract and still requires its checks', () => {
+  const root = completedFixture();
+  const contract = 'octofit-tracker/backend/tests/data.contract.test.ts';
+  fs.copyFileSync(path.join(repositoryRoot, contract), path.join(root, contract));
+  assert.doesNotThrow(() => verifyContracts(root));
+  assert.doesNotThrow(() => checks['step2-data'](root));
+
+  const original = fs.readFileSync(path.join(root, contract), 'utf8');
+  write(root, contract, original.replace('idempotente', 'repetível'));
+  assert.throws(() => checks['step2-data'](root), /Seed contract test must mention/);
+  write(root, contract, original.replaceAll('sentinel', 'unrelated'));
+  assert.throws(() => checks['step2-data'](root), /Seed contract test must mention sentinel/);
+});
+
 test('frontend grader requires shared API usage and visible states', () => {
   const root = copyAll();
   write(root, 'octofit-tracker/frontend/src/components/Activities.tsx', 'export default function Activities(){ return <h1>Activities</h1>; }');

@@ -3,13 +3,13 @@ import { getJson } from '../api/client.js';
 
 export type ResourceState<T> = { status: 'loading' } | { status: 'error' } | { status: 'ready'; data: T };
 
-export function useJsonResource<T>(path: string): ResourceState<T> {
+export function useJsonResource<T>(path: string, request: (path: string) => Promise<T> = getJson): ResourceState<T> {
   const [state, setState] = useState<ResourceState<T>>({ status: 'loading' });
 
   useEffect(() => {
     let active = true;
     setState({ status: 'loading' });
-    getJson<T>(path)
+    request(path)
       .then((data) => {
         if (active) setState({ status: 'ready', data });
       })
@@ -19,7 +19,7 @@ export function useJsonResource<T>(path: string): ResourceState<T> {
     return () => {
       active = false;
     };
-  }, [path]);
+  }, [path, request]);
 
   return state;
 }
