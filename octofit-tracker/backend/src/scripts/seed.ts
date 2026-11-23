@@ -64,3 +64,4 @@ if (process.argv[1]?.endsWith('seed.ts')) {
   await seed();
 }
 // Verificação da Etapa 2
+// Verificação da Etapa 3
