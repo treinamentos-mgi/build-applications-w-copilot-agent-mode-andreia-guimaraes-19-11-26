@@ -45,13 +45,13 @@ flowchart LR
 
 Registre seu plano aqui antes de editar o código.
 
-- Decisão da camada de apresentação:
-- Decisão da camada de lógica:
-- Decisão da camada de dados:
-- Abordagem para registro de atividades:
-- Abordagem para gerenciamento de equipes:
-- Abordagem para o placar:
-- Abordagem para sugestões de treino:
+- Decisão da camada de apresentação: usar React com rotas para as quatro jornadas e um cliente compartilhado para acessar a API.
+- Decisão da camada de lógica: separar as rotas Express dos serviços que validam entradas e implementam as regras de negócio.
+- Decisão da camada de dados: usar modelos Mongoose para persistência no MongoDB e seed idempotente para dados de demonstração.
+- Abordagem para registro de atividades: validar pessoa, equipe, tipo e duração antes de salvar a atividade, atribuindo pontos conforme os minutos.
+- Abordagem para gerenciamento de equipes: validar nome, mascote e integrantes existentes antes de criar a equipe; disponibilizar também sua listagem.
+- Abordagem para o placar: somar os pontos das atividades por equipe, ordenar pelo total e atribuir posições.
+- Abordagem para sugestões de treino: buscar a pessoa pelo e-mail e recomendar treinos pelo foco da atividade recente ou, na ausência dela, pela meta cadastrada.
 
 ## Plano de testes
 
