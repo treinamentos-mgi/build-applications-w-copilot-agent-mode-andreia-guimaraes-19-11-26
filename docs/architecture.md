@@ -45,13 +45,13 @@ flowchart LR
 
 Registre seu plano aqui antes de editar o código.
 
-- Decisão da camada de apresentação:
-- Decisão da camada de lógica:
-- Decisão da camada de dados:
-- Abordagem para registro de atividades:
-- Abordagem para gerenciamento de equipes:
-- Abordagem para o placar:
-- Abordagem para sugestões de treino:
+- Decisão da camada de apresentação: manter componentes de rota em `frontend/src/components`, consumindo `getJson` do cliente compartilhado e exibindo estados acessíveis de carregamento, vazio, sucesso e erro.
+- Decisão da camada de lógica: manter rotas Express finas em `/api/` e delegar validação e regras de negócio a serviços explícitos; responder com 4xx para entradas ou referências inválidas.
+- Decisão da camada de dados: expressar campos obrigatórios nos esquemas Mongoose e popular os dados de demonstração por upserts, preservando registros não relacionados.
+- Abordagem para registro de atividades: validar formato e existência de `userId` e `teamId`, então persistir tipo, minutos, pontos calculados e data da atividade.
+- Abordagem para gerenciamento de equipes: validar nome, mascote e IDs dos integrantes antes de criar a equipe, preservando os valores enviados.
+- Abordagem para o placar: somar pontos por equipe, ordenar do maior para o menor e atribuir posições iniciando em 1.
+- Abordagem para sugestões de treino: localizar a pessoa pelo e-mail e derivar foco e justificativa da atividade recente ou da meta de condicionamento.
 
 ## Plano de testes
 
