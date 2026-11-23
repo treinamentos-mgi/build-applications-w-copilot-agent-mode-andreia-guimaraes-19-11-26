@@ -1,3 +1,4 @@
+import { getJson } from '../api/client.js';
 import { useJsonResource } from '../hooks/useJsonResource.js';
 import { CapabilityCard, ResourceContent } from './CapabilityCard.js';
 
@@ -5,7 +6,7 @@ type LeaderboardEntry = { teamName: string; totalPoints: number; rank: number };
 type LeaderboardResponse = { leaderboard: LeaderboardEntry[] };
 
 export default function Leaderboard() {
-  const state = useJsonResource<LeaderboardResponse>('/api/leaderboard');
+  const state = useJsonResource<LeaderboardResponse>('/api/leaderboard', getJson<LeaderboardResponse>);
   return (
     <CapabilityCard title="Placar" description="Compare a pontuação total das equipes.">
       <ResourceContent state={state} isEmpty={(data) => data.leaderboard.length === 0} emptyMessage="Sem pontuação registrada no placar.">
